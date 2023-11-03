@@ -1,27 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define N_STUDENT  5
+#define SIZE  4
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+void squre_array(int a[],int size){
+	int i;
+	
+	for(i=0; i<SIZE; i++)
+		a[i]=a[i]*a[i];
+}
+
+void print_array(int a[], int size){
+	int i;
+	
+	for(i=0;i<SIZE;i++)
+		printf("%3d", a[i]);
+	printf("\n");
+}
 
 int main(int argc, char *argv[]) {
 	
 	int i;
-	int a[N_STUDENT]={1,2,3,4,5};
-	int b[N_STUDENT]={1,2,3,4,5};
-	int flag = 0;
+	int list[SIZE]={1,2,3,4};
+		
+	print_array(list,SIZE);
+	squre_array(list,SIZE);  //원본이 가기에 제곱된 값이 출력이 된다.  
+	print_array(list,SIZE);
 	
-	for(i=0; i<N_STUDENT; i++){
-	 	
-		if(a[i]!=b[i]){
-			printf("array a and b are not the same");
-			flag=1;
-		}
-	}
-	
-		if(flag==0)
-			printf("array a and b are the same");
-			
 	
 	return 0;
 }
